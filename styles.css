@@ -1,3 +1,73 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Catchy Mager', sans-serif; /* Body text font */
+    background-color: #fdf2d3; /* Pastel yellow background */
+    color: #6e6e6e; /* Gray color for the body text */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Alex Brush', cursive; /* Header font */
+}
+
+/* Header Section */
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.6); /* Light overlay for readability */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    color: #5b2e1a; /* Rich brownish red */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #e58e4d; /* Gray orange color */
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #e58e4d; /* Gray orange color */
+}
+
+.cta-button {
+    text-decoration: none;
+    background-color: #e58e4d; /* Gray orange color */
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #f6c93f; /* Yellow color on hover */
+}
+
 /* Countdown Timer Section */
 #countdown {
     padding: 50px;
@@ -13,15 +83,8 @@
 
 .timer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.timer-row {
-    display: flex;
-    gap: 30px;
     justify-content: center;
+    gap: 30px;
 }
 
 .time-box {
@@ -30,17 +93,201 @@
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 100px;
 }
 
 .time-box span {
     font-size: 3em;
     font-weight: bold;
     display: block;
-    color: #f6c93f; /* Yellow for digits */
+    color: #f6c93f; /* Yellow color for timer digits */
 }
 
 .time-box p {
     font-size: 1.2em;
     color: #e58e4d; /* Gray orange for labels */
+}
+
+/* RSVP Section */
+#rsvp {
+    padding: 50px;
+    background-color: #fdf2d3; /* Light pastel yellow background */
+    text-align: center;
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #e58e4d; /* Gray orange */
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    background-color: #e58e4d; /* Gray orange */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #f6c93f; /* Yellow on hover */
+}
+
+/* FAQs Section */
+#faqs {
+    padding: 50px;
+    background-color: #fdf2d3; /* Light pastel yellow background */
+    text-align: center;
+}
+
+.faq-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1.8em;
+    color: #e58e4d; /* Gray orange */
+}
+
+.faq-item p {
+    font-size: 1.1em;
+    color: #6e6e6e; /* Gray color for body text */
+}
+
+/* Event Location Guide */
+#guide {
+    padding: 50px;
+    background-color: #fff; /* White background */
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Gifts Section */
+#gifts {
+    padding: 50px;
+    background-color: #fdf2d3; /* Light pastel yellow */
+    text-align: center;
+}
+
+.gifts-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#gifts h2 {
+    font-size: 2.5em;
+    color: #e58e4d; /* Gray orange */
+    margin-bottom: 20px;
+}
+
+#gifts p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#gifts a {
+    background-color: #e58e4d; /* Gray orange */
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    border-radius: 25px;
+}
+
+#gifts a:hover {
+    background-color: #f6c93f; /* Yellow on hover */
+}
+
+/* Social Media Section */
+#social-media {
+    padding: 50px;
+    background-color: #fff; /* White background */
+    text-align: center;
+}
+
+.social-media-content h2 {
+    font-size: 2.5em;
+    color: #e58e4d; /* Gray orange */
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #4b2c20; /* Dark brown */
+    padding: 10px 20px;
+    background-color: #e58e4d; /* Gray orange */
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #f6c93f; /* Yellow on hover */
+}
+
+/* Footer Section */
+footer {
+    background-color: #f6c93f; /* Yellow background */
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content p {
+    font-size: 1em;
+    color: #fff; /* White text */
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .cta-button {
+        font-size: 1em;
+    }
+
+    .faq-item h3 {
+        font-size: 1.4em;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
