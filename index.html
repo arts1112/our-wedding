@@ -250,9 +250,30 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   });
 </script>
 
+<script>
+  document.getElementById("music-toggle").addEventListener("click", function () {
+    const container = document.getElementById("music-container");
+
+    if (!container.innerHTML) {
+      container.innerHTML = `
+        <iframe width="0" height="0" 
+          src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=0&loop=1&playlist=yKNxeF4KMsY" 
+          title="Coldplay - Yellow" 
+          frameborder="0" 
+          allow="autoplay" 
+          allowfullscreen>
+        </iframe>
+      `;
+    }
+
+    // Optional: Hide the button after click
+    this.style.display = "none";
+  });
+</script>
 
 </body>
 </html>
+
 
 
 
