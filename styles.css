@@ -107,6 +107,54 @@ p {
     color: #e58e4d; /* Gray orange for labels */
 }
 
+/* Countdown Timer Section */
+#countdown {
+    padding: 50px;
+    background-color: #fdf2d3; /* Light pastel yellow */
+    text-align: center;
+}
+
+.countdown-content h2 {
+    font-size: 2.5em;
+    color: #e58e4d; /* Gray orange color */
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.timer-row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.time-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 100px;
+}
+
+.time-box span {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+    color: #f6c93f; /* Yellow for digits */
+}
+
+.time-box p {
+    font-size: 1.2em;
+    color: #e58e4d; /* Gray orange for labels */
+}
+
+
 /* RSVP Section */
 #rsvp {
     padding: 50px;
@@ -291,3 +339,4 @@ footer {
         gap: 10px;
     }
 }
+
