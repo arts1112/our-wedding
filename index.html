@@ -38,7 +38,7 @@
         <div class="rsvp-form">
             <h2>RSVP</h2>
             <p>Please confirm your attendance for our special day.</p>
-            <form action="#" method="post">
+            <form id="rsvpForm">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required />
                 <label for="attendance">Will you attend?</label>
@@ -147,6 +147,26 @@
         }
     }, 1000);
     </script>
+
+    <script>
+document.getElementById("rsvpForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent actual form submission
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const attendance = document.getElementById("attendance").value;
+    const message = document.getElementById("message").value.trim();
+
+    // You can do anything with these values here
+    // For now, just show confirmation
+    document.getElementById("rsvp-confirmation").style.display = "block";
+
+    // Optionally clear form
+    document.getElementById("rsvpForm").reset();
+});
+</script>
+    
 </body>
 </html>
+
 
