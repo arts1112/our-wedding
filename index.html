@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <div style="display:none">
+  <iframe
+    id="music-player"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=1&loop=1&playlist=yKNxeF4KMsY"
+    title="Coldplay - Yellow"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
+</div>
+
+    <button id="play-music" class="cta-button">🔊 Play Music</button>
+
+    <script>
+  document.getElementById("play-music").addEventListener("click", function () {
+    const iframe = document.getElementById("music-player");
+    const src = iframe.src;
+
+    // Replace mute=1 with mute=0
+    const newSrc = src.replace("mute=1", "mute=0");
+
+    // Reload iframe with unmuted sound
+    iframe.src = newSrc;
+
+    // Hide the button after playing
+    this.style.display = "none";
+  });
+</script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Love in full bloom</title>
@@ -180,13 +212,9 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 });
 </script>
 
-<audio id="background-music" autoplay loop muted>
-  <source src="coldplay - Yellow (Lyrics) - Dan Music.mp3" type="audio/mpeg" />
-</audio>
-
-    
 </body>
 </html>
+
 
 
 
