@@ -22,41 +22,14 @@
 </head>
 <body>
 
-    <!-- 🔊 Play Music Button -->
+   <!-- Music Button (top-right) -->
 <button id="music-toggle" title="Play Music">
   <i class="fas fa-music"></i>
 </button>
 
-    <div style="display:none">
-  <iframe
-    id="music-player"
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=1&loop=1&playlist=yKNxeF4KMsY"
-    title="Coldplay - Yellow"
-    frameborder="0"
-    allow="autoplay"
-    allowfullscreen
-  ></iframe>
-</div>
+<!-- YouTube Player Container (hidden until click) -->
+<div id="music-container" style="display: none;"></div>
 
-    <button id="play-music" class="cta-button">🔊 Play Music</button>
-
-    <script>
-  document.getElementById("play-music").addEventListener("click", function () {
-    const iframe = document.getElementById("music-player");
-    const src = iframe.src;
-
-    // Replace mute=1 with mute=0
-    const newSrc = src.replace("mute=1", "mute=0");
-
-    // Reload iframe with unmuted sound
-    iframe.src = newSrc;
-
-    // Hide the button after playing
-    this.style.display = "none";
-  });
-</script>
     
     <!-- Home Page with Background Images -->
     <header class="hero">
@@ -223,56 +196,29 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 });
 </script>
 
-    <!-- 🎵 Hidden YouTube Player -->
-<div style="display: none;">
-  <iframe
-    id="music-player"
-    width="0"
-    height="0"
-    src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=1&loop=1&playlist=yKNxeF4KMsY"
-    allow="autoplay"
-    allowfullscreen
-  ></iframe>
-</div>
-
-<!-- 🎧 Toggle Music Script -->
-<script>
-  document.getElementById("music-toggle").addEventListener("click", function () {
-    const iframe = document.getElementById("music-player");
-    const src = iframe.src;
-
-    // Toggle mute off
-    if (src.includes("mute=1")) {
-      const newSrc = src.replace("mute=1", "mute=0");
-      iframe.src = newSrc;
-      this.style.display = "none"; // hide after click (optional)
-    }
-  });
-</script>
-
-<script>
+    <script>
   document.getElementById("music-toggle").addEventListener("click", function () {
     const container = document.getElementById("music-container");
 
     if (!container.innerHTML) {
       container.innerHTML = `
-        <iframe width="0" height="0" 
-          src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=0&loop=1&playlist=yKNxeF4KMsY" 
-          title="Coldplay - Yellow" 
-          frameborder="0" 
-          allow="autoplay" 
+        <iframe width="0" height="0"
+          src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=0&loop=1&playlist=yKNxeF4KMsY"
+          title="Coldplay - Yellow"
+          frameborder="0"
+          allow="autoplay"
           allowfullscreen>
         </iframe>
       `;
     }
 
-    // Optional: Hide the button after click
-    this.style.display = "none";
+    this.style.display = "none"; // Hide button after click
   });
 </script>
 
 </body>
 </html>
+
 
 
 
