@@ -18,12 +18,19 @@
 <body>
 
    <!-- Music Button (top-right) -->
-<button id="music-toggle" title="Play Music">
-  <i class="fas fa-music"></i>
-</button>
-
 <!-- YouTube Player Container (hidden until click) -->
-<div id="music-container" style="display: none;"></div>
+<div id="music-container" style="display: none;">
+  <iframe
+    id="youtube-player"
+    width="0"
+    height="0"
+    src=""
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+</div>
+
 
     
     <!-- Home Page with Background Images -->
@@ -213,6 +220,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 
 </body>
 </html>
+
 
 
 
