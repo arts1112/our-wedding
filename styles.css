@@ -22,7 +22,7 @@ header.hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('123123123.JPG');
+    background-image: url('IMG_6216.JPG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -346,6 +346,7 @@ footer {
         gap: 10px;
     }
 }
+
 
 
 
