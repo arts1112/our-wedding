@@ -17,18 +17,20 @@ h1, h2, h3 {
 }
 
 /* Header Section */
-header {
+header.hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg');
+    background-image: url('IMG_6229.JPG'); 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .overlay {
-    background-color: rgba(255, 255, 255, 0.6); /* Light overlay for readability */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,25 +40,25 @@ header {
 
 .content {
     text-align: center;
-    color: #5b2e1a; /* Rich brownish red */
+    color: #e58e4d; /* Text color */
     padding: 20px;
 }
 
 h1 {
     font-size: 3em;
     margin-bottom: 20px;
-    color: #e58e4d; /* Gray orange color */
+    font-family: 'Alex Brush', cursive;
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    color: #e58e4d; /* Gray orange color */
+    color: #e58e4d;
 }
 
 .cta-button {
     text-decoration: none;
-    background-color: #e58e4d; /* Gray orange color */
+    background-color: #e58e4d;
     padding: 10px 20px;
     font-size: 1.2em;
     color: #fff;
@@ -65,7 +67,7 @@ p {
 }
 
 .cta-button:hover {
-    background-color: #f6c93f; /* Yellow color on hover */
+    background-color: #f6c93f;
 }
 
 /* Countdown Timer Section */
@@ -339,4 +341,5 @@ footer {
         gap: 10px;
     }
 }
+
 
