@@ -35,23 +35,13 @@
 
     <!-- RSVP Section -->
     <section id="rsvp">
-        <div class="rsvp-form">
-            <h2>RSVP</h2>
-            <p>Please confirm your attendance for our special day.</p>
-            <form id="rsvpForm">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required />
-                <label for="attendance">Will you attend?</label>
-                <select id="attendance" name="attendance" required>
-                    <option value="yes">Yes, I will attend!</option>
-                    <option value="no">No, I cannot attend</option>
-                </select>
-                <label for="message">Message for the couple</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                <button type="submit" class="cta-button">Submit RSVP</button>
-            </form>
+    <div class="rsvp-form">
+        <h2>RSVP</h2>
+        <div class="google-form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfhz-OCZeht_o9aK6u7CN8Itcra5nTN80qOo15NUNXQttbAGg/viewform?embedded=true" width="640" height="761" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- FAQs Section -->
     <section id="faqs">
@@ -168,5 +158,6 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
     
 </body>
 </html>
+
 
 
