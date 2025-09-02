@@ -223,8 +223,37 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 });
 </script>
 
+    <!-- 🎵 Hidden YouTube Player -->
+<div style="display: none;">
+  <iframe
+    id="music-player"
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=1&loop=1&playlist=yKNxeF4KMsY"
+    allow="autoplay"
+    allowfullscreen
+  ></iframe>
+</div>
+
+<!-- 🎧 Toggle Music Script -->
+<script>
+  document.getElementById("music-toggle").addEventListener("click", function () {
+    const iframe = document.getElementById("music-player");
+    const src = iframe.src;
+
+    // Toggle mute off
+    if (src.includes("mute=1")) {
+      const newSrc = src.replace("mute=1", "mute=0");
+      iframe.src = newSrc;
+      this.style.display = "none"; // hide after click (optional)
+    }
+  });
+</script>
+
+
 </body>
 </html>
+
 
 
 
