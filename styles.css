@@ -231,20 +231,58 @@ button[type="submit"]:hover {
 }
 
 /* Event Location Guide */
-#guide {
-    padding: 50px;
-    background-color: #fff; /* White background */
-    text-align: center;
+#location {
+  background: url('538433461_1159955706154005_4888444705637979730_n.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+#location::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  z-index: 0;
 }
 
-ul li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
+#location .container {
+  position: relative;
+  z-index: 1;
+}
+
+#location h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #f7944d;
+  margin-bottom: 20px;
+}
+
+#location p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#location strong {
+  font-weight: bold;
+}
+
+#location .btn {
+  background-color: #f7944d;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#location .btn:hover {
+  background-color: #e07b2f;
 }
 
 /* Gifts Section */
@@ -391,6 +429,7 @@ footer {
     background-color: #e76c0e;
     transform: scale(1.05);
 }
+
 
 
 
