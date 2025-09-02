@@ -13,196 +13,198 @@
 
   <!-- Font Awesome (only 1 needed!) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Music button styling */
+    #music-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #f9d55a;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    #music-toggle i {
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
 
-   <!-- Music Button (top-right) -->
-<!-- YouTube Player Container (hidden until click) -->
-<div id="music-container" style="display: none;">
-  <iframe
-    id="youtube-player"
-    width="0"
-    height="0"
-    src=""
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen
-  ></iframe>
-</div>
+  <!-- Music Button (top-right) -->
+  <button id="music-toggle" title="Play Music">
+    <i class="fas fa-music"></i> Play Music
+  </button>
 
+  <!-- YouTube Player Container (hidden until click) -->
+  <div id="music-container" style="display: none;">
+    <iframe
+      id="youtube-player"
+      width="0"
+      height="0"
+      src=""
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
 
-    
-    <!-- Home Page with Background Images -->
-    <header class="hero">
-        <div class="overlay">
-            <div class="content">
-                <h1>Arman & Roxanne</h1>
-                <p>Like sunflowers turning to the light, We’ve grown side by side, day and night. Rooted in love, reaching for skies. Our forever begins where sunshine lies. Join us in celebrating our love!</p>
-                <a href="#rsvp" class="cta-button">Save the Date</a>
-            </div>
-        </div>
-    </header>
+  <!-- Your existing content here -->
 
-    <!-- Countdown Timer Section -->
-    <section id="countdown">
-        <div class="countdown-content">
-            <h2>Countdown to Our Big Day!</h2>
-            <div id="timer" class="timer">
-                <div id="days" class="time-box"><span>00</span><p>Days</p></div>
-                <div id="hours" class="time-box"><span>00</span><p>Hours</p></div>
-                <div id="minutes" class="time-box"><span>00</span><p>Minutes</p></div>
-                <div id="seconds" class="time-box"><span>00</span><p>Seconds</p></div>
-            </div>
-        </div>
-    </section>
+  <!-- Home Page with Background Images -->
+  <header class="hero">
+      <div class="overlay">
+          <div class="content">
+              <h1>Arman & Roxanne</h1>
+              <p>Like sunflowers turning to the light, We’ve grown side by side, day and night. Rooted in love, reaching for skies. Our forever begins where sunshine lies. Join us in celebrating our love!</p>
+              <a href="#rsvp" class="cta-button">Save the Date</a>
+          </div>
+      </div>
+  </header>
 
-    <!-- RSVP Section -->
-    <section id="rsvp">
+  <!-- Countdown Timer Section -->
+  <section id="countdown">
+      <div class="countdown-content">
+          <h2>Countdown to Our Big Day!</h2>
+          <div id="timer" class="timer">
+              <div id="days" class="time-box"><span>00</span><p>Days</p></div>
+              <div id="hours" class="time-box"><span>00</span><p>Hours</p></div>
+              <div id="minutes" class="time-box"><span>00</span><p>Minutes</p></div>
+              <div id="seconds" class="time-box"><span>00</span><p>Seconds</p></div>
+          </div>
+      </div>
+  </section>
+
+  <!-- RSVP Section -->
+  <section id="rsvp">
     <div class="rsvp-form">
         <h2>RSVP</h2>
         <div class="google-form">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfhz-OCZeht_o9aK6u7CN8Itcra5nTN80qOo15NUNXQttbAGg/viewform?embedded=true" width="640" height="761" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
-</section>
+  </section>
 
-    <!-- FAQs Section -->
-    <section id="faqs">
-        <div class="faq-content">
-            <h2>FAQs</h2>
-            <div class="faq-item">
-                <h3>What is the dress code?</h3>
-                <p>Guests: We kindly request that guests attend in semi-formal attire that complements our chosen color motif. Ladies: Please wear modest, flowy dresses that reflect a garden-inspired theme. Gentlemen: We kindly ask that denim pants be avoided. Black or khaki pants are preferred.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What time should I arrive?</h3>
-                <p>The ceremony will start at 3:00 PM, but feel free to arrive a little earlier.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is there parking at the venue?</h3>
-                <p>Yes, there is plenty of parking available at the venue.</p>
-            </div>
-        </div>
-    </section>
+  <!-- FAQs Section -->
+  <section id="faqs">
+      <div class="faq-content">
+          <h2>FAQs</h2>
+          <div class="faq-item">
+              <h3>What is the dress code?</h3>
+              <p>Guests: We kindly request that guests attend in semi-formal attire that complements our chosen color motif. Ladies: Please wear modest, flowy dresses that reflect a garden-inspired theme. Gentlemen: We kindly ask that denim pants be avoided. Black or khaki pants are preferred.</p>
+          </div>
+          <div class="faq-item">
+              <h3>What time should I arrive?</h3>
+              <p>The ceremony will start at 3:00 PM, but feel free to arrive a little earlier.</p>
+          </div>
+          <div class="faq-item">
+              <h3>Is there parking at the venue?</h3>
+              <p>Yes, there is plenty of parking available at the venue.</p>
+          </div>
+      </div>
+  </section>
 
-    <!-- Event Location Guide Section -->
-    <section id="location">
-  <div class="container">
-    <h2>Event Location</h2>
-    <p>Here's how to get to our wedding venue:</p>
+  <!-- Event Location Guide Section -->
+  <section id="location">
+    <div class="container">
+      <h2>Event Location</h2>
+      <p>Here's how to get to our wedding venue:</p>
+      
+      <p>
+        <strong>
+          <i class="fas fa-map-marker-alt icon"></i> Address:
+        </strong> Zion Events Place
+      </p>
+      
+      <p>
+        <strong>
+          <i class="fas fa-parking icon"></i> Parking:
+        </strong> Available at the venue
+      </p>
+      
+      <button
+        class="btn"
+        onclick="window.open('https://maps.google.com?q=Zion+Events+Place', '_blank')"
+      >
+        <i class="fas fa-directions icon-btn"></i> Get Directions
+      </button>
+    </div>
+  </section>
+
+  <!-- Gifts Section -->
+  <section id="gifts">
+      <div class="gifts-content">
+          <h2>Gift Registry</h2>
+          <p>Your presence at our wedding is the best gift we could ask for. However, if you'd like to bless us with a gift, we've created a registry to make it easy!</p>
+          <a href="https://www.thesmstoregiftregistry.com/eventdetail/68b6e7d8d3f4d4b656c7e359?eventCode=8217786" target="_blank" class="cta-button">View Our Registry</a>
+      </div>
+  </section>
+
+  <section class="social-section">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out anytime:</p>
     
-    <p>
-      <strong>
-        <i class="fas fa-map-marker-alt icon"></i> Address:
-      </strong> Zion Events Place
-    </p>
-    
-    <p>
-      <strong>
-        <i class="fas fa-parking icon"></i> Parking:
-      </strong> Available at the venue
-    </p>
-    
-    <button
-      class="btn"
-      onclick="window.open('https://maps.google.com?q=Zion+Events+Place', '_blank')"
-    >
-      <i class="fas fa-directions icon-btn"></i> Get Directions
-    </button>
-  </div>
-</section>
+    <div class="contact-icons">
+      <a href="mailto:armanandroxanne@gmail.com" class="round-icon" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="tel:+639272516245" class="round-icon" title="Call">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+      <a href="https://www.facebook.com/ardav13" target="_blank" class="round-icon" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+  </section>
 
-    <!-- Gifts Section -->
-    <section id="gifts">
-        <div class="gifts-content">
-            <h2>Gift Registry</h2>
-            <p>Your presence at our wedding is the best gift we could ask for. However, if you'd like to bless us with a gift, we've created a registry to make it easy!</p>
-            <a href="https://www.thesmstoregiftregistry.com/eventdetail/68b6e7d8d3f4d4b656c7e359?eventCode=8217786" target="_blank" class="cta-button">View Our Registry</a>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer>
+      <div class="footer-content">
+          <p>&copy; 2025 Arman & Roxanne Wedding. All Rights Reserved.</p>
+      </div>
+  </footer>
 
-   <section class="social-section">
-  <h2>Contact Us</h2>
-  <p>We’d love to hear from you! Reach out anytime:</p>
-  
-  <div class="contact-icons">
-    <a href="mailto:armanandroxanne@gmail.com" class="round-icon" title="Email">
-      <i class="fas fa-envelope"></i>
-    </a>
-    <a href="tel:+639272516245" class="round-icon" title="Call">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-    <a href="https://www.facebook.com/ardav13" target="_blank" class="round-icon" title="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-  </div>
-</section>
+  <!-- Countdown Timer Script -->
+  <script>
+  var weddingDate = new Date("Mar 27, 2026 15:00:00").getTime();
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Arman & Roxanne Wedding. All Rights Reserved.</p>
-        </div>
-    </footer>
+  var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = weddingDate - now;
 
-    <!-- Countdown Timer Script -->
-    <script>
-    // Set the date we're counting down to
-    var weddingDate = new Date("Mar 27, 2026 15:00:00").getTime();
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Update the countdown every 1 second
-    var x = setInterval(function() {
+      document.getElementById("days").innerHTML = "<span>" + days + "</span><p>Days</p>";
+      document.getElementById("hours").innerHTML = "<span>" + hours + "</span><p>Hours</p>";
+      document.getElementById("minutes").innerHTML = "<span>" + minutes + "</span><p>Minutes</p>";
+      document.getElementById("seconds").innerHTML = "<span>" + seconds + "</span><p>Seconds</p>";
 
-        // Get the current date and time
-        var now = new Date().getTime();
+      if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "<h3>Our Wedding Day is Here!</h3>";
+      }
+  }, 1000);
+  </script>
 
-        // Find the time difference between now and the wedding date
-        var distance = weddingDate - now;
-
-        // Calculate days, hours, minutes, and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the respective elements
-        document.getElementById("days").innerHTML = "<span>" + days + "</span><p>Days</p>";
-        document.getElementById("hours").innerHTML = "<span>" + hours + "</span><p>Hours</p>";
-        document.getElementById("minutes").innerHTML = "<span>" + minutes + "</span><p>Minutes</p>";
-        document.getElementById("seconds").innerHTML = "<span>" + seconds + "</span><p>Seconds</p>";
-
-        // If the countdown is over, display a message
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("timer").innerHTML = "<h3>Our Wedding Day is Here!</h3>";
-        }
-    }, 1000);
-    </script>
-
-    <script>
-document.getElementById("rsvpForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission
-
-    // Get form values
-    const name = document.getElementById("name").value.trim();
-    const attendance = document.getElementById("attendance").value;
-    const message = document.getElementById("message").value.trim();
-
-    // You can do anything with these values here
-    // For now, just show confirmation
-    document.getElementById("rsvp-confirmation").style.display = "block";
-
-    // Optionally clear form
-    document.getElementById("rsvpForm").reset();
-});
-</script>
-
-    <script>
+  <!-- Music toggle script -->
+  <script>
   document.getElementById("music-toggle").addEventListener("click", function () {
     const container = document.getElementById("music-container");
 
-    if (!container.innerHTML) {
+    if (!container.innerHTML.trim()) {
       container.innerHTML = `
         <iframe width="0" height="0"
           src="https://www.youtube.com/embed/yKNxeF4KMsY?autoplay=1&mute=0&loop=1&playlist=yKNxeF4KMsY"
@@ -216,31 +218,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
 
     this.style.display = "none"; // Hide button after click
   });
-</script>
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
