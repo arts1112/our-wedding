@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Love in full bloom</title>
+    <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Catchy+Mager&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -24,20 +25,87 @@
         <div class="countdown-content">
             <h2>Countdown to Our Big Day!</h2>
             <div id="timer" class="timer">
-                <div class="timer-row">
-                    <div id="days" class="time-box"><span>00</span><p>Days</p></div>
-                    <div id="hours" class="time-box"><span>00</span><p>Hours</p></div>
-                </div>
-                <div class="timer-row">
-                    <div id="minutes" class="time-box"><span>00</span><p>Minutes</p></div>
-                    <div id="seconds" class="time-box"><span>00</span><p>Seconds</p></div>
-                </div>
+                <div id="days" class="time-box"><span>00</span><p>Days</p></div>
+                <div id="hours" class="time-box"><span>00</span><p>Hours</p></div>
+                <div id="minutes" class="time-box"><span>00</span><p>Minutes</p></div>
+                <div id="seconds" class="time-box"><span>00</span><p>Seconds</p></div>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
-    <!-- (Leave the rest of your sections unchanged) -->
+    <section id="rsvp">
+        <div class="rsvp-form">
+            <h2>RSVP</h2>
+            <p>Please confirm your attendance for our special day.</p>
+            <form action="#" method="post">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+                <label for="attendance">Will you attend?</label>
+                <select id="attendance" name="attendance" required>
+                    <option value="yes">Yes, I will attend!</option>
+                    <option value="no">No, I cannot attend</option>
+                </select>
+                <label for="message">Message for the couple</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <button type="submit" class="cta-button">Submit RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs">
+        <div class="faq-content">
+            <h2>FAQs</h2>
+            <div class="faq-item">
+                <h3>What is the dress code?</h3>
+                <p>Guests: We kindly request that guests attend in semi-formal attire that complements our chosen color motif. Ladies: Please wear modest, flowy dresses that reflect a garden-inspired theme. Gentlemen: We kindly ask that denim pants be avoided. Black or khaki pants are preferred.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What time should I arrive?</h3>
+                <p>The ceremony will start at 3:00 PM, but feel free to arrive a little earlier.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there parking at the venue?</h3>
+                <p>Yes, there is plenty of parking available at the venue.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Location Guide Section -->
+    <section id="guide">
+        <div class="guide-content">
+            <h2>Event Location</h2>
+            <p>Here’s how to get to our wedding venue:</p>
+            <ul>
+                <li><strong>Address:</strong> Zion Events Place</li>
+                <li><strong>Parking:</strong> Available at the venue</li>
+            </ul>
+            <a href="https://www.google.com/maps/place/Zion+Events+Place" target="_blank" class="cta-button">Get Directions</a>
+        </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section id="gifts">
+        <div class="gifts-content">
+            <h2>Gift Registry</h2>
+            <p>Your presence at our wedding is the best gift we could ask for. However, if you'd like to bless us with a gift, we've created a registry to make it easy!</p>
+            <a href="https://www.example.com/registry" target="_blank" class="cta-button">View Our Registry</a>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social-media">
+        <div class="social-media-content">
+            <h2>Follow Our Journey</h2>
+            <p>Stay connected and share in the excitement as we count down to our big day!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank" class="social-link">Instagram</a>
+                <a href="https://www.facebook.com" target="_blank" class="social-link">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank" class="social-link">Twitter</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -48,22 +116,31 @@
 
     <!-- Countdown Timer Script -->
     <script>
+    // Set the date we're counting down to
     var weddingDate = new Date("Mar 27, 2026 15:00:00").getTime();
 
-    var x = setInterval(function () {
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+
+        // Get the current date and time
         var now = new Date().getTime();
+
+        // Find the time difference between now and the wedding date
         var distance = weddingDate - now;
 
+        // Calculate days, hours, minutes, and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        // Display the result in the respective elements
         document.getElementById("days").innerHTML = "<span>" + days + "</span><p>Days</p>";
         document.getElementById("hours").innerHTML = "<span>" + hours + "</span><p>Hours</p>";
         document.getElementById("minutes").innerHTML = "<span>" + minutes + "</span><p>Minutes</p>";
         document.getElementById("seconds").innerHTML = "<span>" + seconds + "</span><p>Seconds</p>";
 
+        // If the countdown is over, display a message
         if (distance < 0) {
             clearInterval(x);
             document.getElementById("timer").innerHTML = "<h3>Our Wedding Day is Here!</h3>";
