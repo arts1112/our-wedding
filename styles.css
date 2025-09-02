@@ -430,6 +430,22 @@ footer {
     transform: scale(1.05);
 }
 
+#play-music {
+  background-color: #f6c93f;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#play-music:hover {
+  background-color: #e58e4d;
+}
+
+
 
 
 
