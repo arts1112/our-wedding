@@ -347,6 +347,50 @@ footer {
     }
 }
 
+.social-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #111;
+    color: #eee;
+}
+
+.social-section h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #f78c3d;
+    margin-bottom: 10px;
+}
+
+.social-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.round-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f78c3d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.round-icon:hover {
+    background-color: #e76c0e;
+    transform: scale(1.05);
+}
 
 
 
