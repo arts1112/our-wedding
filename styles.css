@@ -439,7 +439,7 @@ body {
   line-height: 1.6;
 }
 
-/* Music Button (Circular Icon) */
+/* Music Toggle Button (Icon Style) */
 #music-toggle {
   position: fixed;
   top: 20px;
@@ -465,7 +465,14 @@ body {
   transform: scale(1.1);
 }
 
-/* Example hero section for context */
+/* Optional: Hide the iframe visually */
+#music-container iframe {
+  width: 0;
+  height: 0;
+  border: none;
+}
+
+/* Example hero */
 header.hero {
   height: 100vh;
   display: flex;
@@ -520,6 +527,7 @@ header.hero {
 .cta-button:hover {
   background-color: #f6c93f;
 }
+
 
 
 
