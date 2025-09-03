@@ -213,7 +213,7 @@
   <!-- Gifts Section -->
 <section id="gifts">
   <div class="gifts-content">
-    <h2>Monetary Gift</h2>
+    <h2>Gifts</h2>
     <p>Your presence at our wedding is the greatest gift we could ask for. But should you wish to give nonetheless, a monetary gift is what we suggest—To help us avoid duplicate home appliances and such, here are some simple ways to do so.</p>
 
     <!-- Toggle Button (Mobile) -->
@@ -237,25 +237,38 @@
       </div>
 
       <!-- GCash Tab -->
-      <div class="tab-content" id="gcash-tab">
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-          <!-- Arman's GCash -->
-          <div style="text-align: center;">
-            <h3 style="color: #e58e4d;">Arman's GCash</h3>
-            <img src="1000056567.jpg" alt="Arman's GCash QR" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
-          </div>
-        </div> <!-- <-- closing GCash content wrapper -->
-      </div> <!-- <-- closing GCash tab -->
-
-      <!-- PSBank Tab -->
-      <div class="tab-content" id="psbank-tab" style="display: none;">
-        <div style="text-align: center;">
-          <h3 style="color: #e58e4d;">Arman's PSBank</h3>
-          <img src="1000056568.jpg" alt="Arman's PSBank QR" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
-        </div>
+<div class="tab-content" id="gcash-tab">
+  <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+    <!-- Arman's GCash -->
+    <div style="text-align: center;">
+      <h3 style="color: #e58e4d;">Arman's GCash</h3>
+      <div class="qr-wrapper">
+        <img
+          src="1000056567.jpg"
+          alt="Arman's GCash QR"
+          class="zoomable-qr"
+          style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: zoom-in;"
+        />
       </div>
-    </div> <!-- <-- closing qr-container -->
+    </div>
   </div>
+</div>
+
+<!-- PSBank Tab -->
+<div class="tab-content" id="psbank-tab" style="display: none;">
+  <div style="text-align: center;">
+    <h3 style="color: #e58e4d;">Arman's PSBank</h3>
+    <div class="qr-wrapper">
+      <img
+        src="1000056568.jpg"
+        alt="Arman's PSBank QR"
+        class="zoomable-qr"
+        style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px; cursor: zoom-in;"
+      />
+    </div>
+  </div>
+</div>
+
 </section>
 
 
@@ -400,8 +413,64 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("qr-modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.getElementById("close-modal");
+
+  // When image is clicked, show modal
+  document.querySelectorAll(".zoomable-qr").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    });
+  });
+
+  // Close modal on ❌ click
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalImg.src = "";
+  });
+
+  // Optional: click outside image to close
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      modalImg.src = "";
+    }
+  });
+});
+</script>
+
+      <!-- Enhanced Modal for Zoomed QR -->
+<div id="qr-modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+  <span id="close-modal" style="position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+
+  <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+    <img 
+      id="modal-img" 
+      src="" 
+      alt="Zoomed QR" 
+      style="max-width: 95%; max-height: 90%; border-radius: 10px; touch-action: none;" 
+    />
+  </div>
+
+  <div id="modal-controls" style="text-align: center; margin-top: -30px;">
+    <button 
+      id="download-btn" 
+      style="margin-top: 10px; background: #e58e4d; color: white; padding: 10px 20px; border: none; border-radius: 25px; font-size: 16px; cursor: pointer;"
+    >
+      📥 Download
+    </button>
+  </div>
+</div>
+
+
 </body>
 </html>
+
 
 
 
