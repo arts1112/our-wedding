@@ -157,14 +157,14 @@ button[type="submit"]:hover {
 
 /* FAQ Section */
 #faqs {
-  max-width: 700px;
+  max-width: 900px;           /* increased width */
   margin: 40px auto;
-  background-color: #53584e; /* dark gray-green */
-  color: #e6e1d3; /* off-white text */
+  background-color: #53584e;  /* dark gray-green */
+  color: #e6e1d3;             /* off-white text */
   font-family: 'Catchy Mager', cursive;
-  padding: 40px 30px;
+  padding: 50px 40px;         /* more padding */
   border-radius: 10px;
-  max-height: 300px;
+  max-height: 450px;          /* taller */
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #e58e4d #3b3e35;
@@ -184,23 +184,25 @@ button[type="submit"]:hover {
   border: 2px solid #3b3e35;
 }
 
+/* FAQ Header */
 #faqs h2 {
   font-family: 'Alex Brush', cursive;
-  font-size: 2.8em;
-  color: #e6e1d3;
+  font-size: 3.2em;           /* slightly larger */
+  color: #f3c677;             /* warm gold */
   text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: 0.03em;
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
 }
 
+/* Accordion Header (Questions) */
 .accordion-header {
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: 1.05rem;
-  letter-spacing: 0.05em;
-  padding: 15px 0;
+  font-weight: 600;           /* bolder */
+  font-size: 1.15rem;         /* bigger font */
+  letter-spacing: 0.07em;
+  padding: 18px 0;
   border-bottom: 1px solid #666b60; /* subtle line */
-  color: #e6e1d3;
+  color: #f3c677;             /* gold */
   cursor: pointer;
   position: relative;
   user-select: none;
@@ -211,19 +213,19 @@ button[type="submit"]:hover {
   border: none;
   width: 100%;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   transition: color 0.3s ease;
 }
 
 .accordion-header:hover {
-  color: #e58e4d; /* orange highlight */
+  color: #e58e4d;             /* orange highlight */
 }
 
 /* Arrow on the right */
 .accordion-header::after {
   content: '▼';
-  font-size: 0.8rem;
-  color: #e6e1d3;
+  font-size: 0.9rem;
+  color: #f3c677;
   transition: transform 0.3s ease, color 0.3s ease;
   margin-left: 10px;
 }
@@ -233,17 +235,19 @@ button[type="submit"]:hover {
   color: #e58e4d;
 }
 
+/* Accordion Body (Answers) */
 .accordion-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 1rem;
-  padding: 0 10px 20px 10px;
-  color: #e6e1d3;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  padding: 0 15px 22px 15px; /* a bit more padding */
+  color: #dcd6c9;            /* lighter off-white */
+  line-height: 1.6;
 }
+
 
 /* Event Location Section */
 #location {
@@ -435,3 +439,4 @@ footer {
     gap: 10px;
   }
 }
+
