@@ -157,69 +157,70 @@ button[type="submit"]:hover {
 
 /* FAQ Section */
 #faqs {
-  padding: 50px 20px;
-  background-color: #fdf1d6;
-  font-family: 'Poppins', sans-serif;
-  color: #5a3e1b;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
-  text-align: left;
+  background-color: #53584e; /* dark gray-green from screenshot */
+  color: #e6e1d3; /* off-white text */
+  font-family: 'Catchy Mager', cursive;
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #e58e4d transparent;
 }
 
 #faqs h2 {
   font-family: 'Alex Brush', cursive;
-  font-size: 2.5em;
-  color: #e58e4d;
-  margin-bottom: 30px;
+  font-size: 2.8em;
+  color: #e6e1d3;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .accordion-header {
-  background: none;
-  border: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.05em;
   padding: 15px 0;
-  font-size: 18px;
-  text-align: left;
-  width: 100%;
+  border-bottom: 1px solid #666b60; /* subtle line */
+  color: #e6e1d3;
   cursor: pointer;
-  font-family: 'Catchy Mager', cursive;
-  color: #e58e4d;
-  border-bottom: 1px solid #ccc;
   position: relative;
-  transition: color 0.3s ease;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion-header:hover {
-  color: #f6c93f;
+  color: #e58e4d; /* orange highlight */
 }
 
+/* Arrow on the right */
 .accordion-header::after {
-  content: '\25BE'; /* ▼ */
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  content: '▼';
+  font-size: 0.8rem;
+  color: #e6e1d3;
   transition: transform 0.3s ease;
-  color: #e58e4d;
 }
 
 .accordion-header.active::after {
-  transform: translateY(-50%) rotate(180deg); /* ▲ */
+  transform: rotate(-180deg);
+  color: #e58e4d;
 }
 
 .accordion-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
   padding: 0 0 20px 0;
-  font-size: 16px;
-  color: #5a3e1b;
-  line-height: 1.6;
-}
-
-.accordion-header.active + .accordion-body {
-  max-height: 600px;
-  padding-top: 10px;
+  color: #e6e1d3;
+  line-height: 1.4;
 }
 
 /* Event Location Section */
@@ -412,3 +413,4 @@ footer {
     gap: 10px;
   }
 }
+
