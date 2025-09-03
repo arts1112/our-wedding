@@ -158,8 +158,8 @@ button[type="submit"]:hover {
 /* FAQ Section */
 #faqs {
   max-width: 700px;
-  margin: 0 auto;
-  background-color: #53584e; /* dark gray-green from screenshot */
+  margin: 40px auto;
+  background-color: #53584e; /* dark gray-green */
   color: #e6e1d3; /* off-white text */
   font-family: 'Catchy Mager', cursive;
   padding: 40px 30px;
@@ -167,7 +167,21 @@ button[type="submit"]:hover {
   max-height: 300px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #e58e4d transparent;
+  scrollbar-color: #e58e4d #3b3e35;
+}
+
+/* Scrollbar for WebKit */
+#faqs::-webkit-scrollbar {
+  width: 8px;
+}
+#faqs::-webkit-scrollbar-track {
+  background: #3b3e35;
+  border-radius: 10px;
+}
+#faqs::-webkit-scrollbar-thumb {
+  background-color: #e58e4d;
+  border-radius: 10px;
+  border: 2px solid #3b3e35;
 }
 
 #faqs h2 {
@@ -176,6 +190,7 @@ button[type="submit"]:hover {
   color: #e6e1d3;
   text-align: center;
   margin-bottom: 30px;
+  letter-spacing: 0.03em;
 }
 
 .accordion-header {
@@ -192,6 +207,12 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .accordion-header:hover {
@@ -203,7 +224,8 @@ button[type="submit"]:hover {
   content: '▼';
   font-size: 0.8rem;
   color: #e6e1d3;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-left: 10px;
 }
 
 .accordion-header.active::after {
@@ -218,7 +240,7 @@ button[type="submit"]:hover {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  padding: 0 0 20px 0;
+  padding: 0 10px 20px 10px;
   color: #e6e1d3;
   line-height: 1.4;
 }
@@ -413,4 +435,3 @@ footer {
     gap: 10px;
   }
 }
-
