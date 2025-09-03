@@ -418,6 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("qr-modal");
   const modalImg = document.getElementById("modal-img");
   const closeBtn = document.getElementById("close-modal");
+  const downloadBtn = document.getElementById("download-btn");
 
   // When image is clicked, show modal
   document.querySelectorAll(".zoomable-qr").forEach(img => {
@@ -425,6 +426,21 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "block";
       modalImg.src = img.src;
       modalImg.alt = img.alt;
+
+      // Update download button's click event dynamically
+      downloadBtn.onclick = () => {
+        // Create a temporary link to trigger download
+        const link = document.createElement('a');
+        link.href = modalImg.src;
+        // Generate a filename from alt text or fallback
+        const fileName = (modalImg.alt || 'qr_code').replace(/\s+/g, '_') + '.png';
+        link.download = fileName;
+
+        // Append, click, remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
     });
   });
 
@@ -442,6 +458,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 </script>
 
       <!-- Enhanced Modal for Zoomed QR -->
@@ -470,6 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
