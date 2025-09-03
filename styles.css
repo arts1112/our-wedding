@@ -425,6 +425,21 @@ footer {
     transition: background-color 0.3s ease;
 }
 
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Catchy Mager', sans-serif;
+  background-color: #fdf2d3;
+  color: #6e6e6e;
+  line-height: 1.6;
+}
+
+/* Music Button (Circular Icon) */
 #music-toggle {
   position: fixed;
   top: 20px;
@@ -449,6 +464,63 @@ footer {
   background-color: #e0aa06;
   transform: scale(1.1);
 }
+
+/* Example hero section for context */
+header.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('IMG_6216.JPG');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #e58e4d;
+}
+
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: 'Alex Brush', cursive;
+}
+
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #e58e4d;
+}
+
+.cta-button {
+  text-decoration: none;
+  background-color: #e58e4d;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  color: #fff;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #f6c93f;
+}
+
 
 
 
