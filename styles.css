@@ -680,6 +680,74 @@ header.hero {
   max-height: 300px; /* Enough height for content */
 }
 
+/* FAQ Container */
+#faqs {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #53584e;
+  color: #e6e1d3;
+  font-family: 'Catchy Mager', cursive;
+  padding: 50px 40px;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+/* FAQ Header */
+#faqs h2 {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3em;
+  color: #f3c677;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Accordion Header */
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.07em;
+  color: #f3c677;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Arrow icon */
+.accordion-header::after {
+  content: "▼";
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.accordion-header[aria-expanded="true"]::after {
+  transform: rotate(-180deg);
+  color: #e58e4d;
+}
+.accordion-header:hover {
+  color: #e58e4d;
+}
+
+/* Accordion Body (Answer) */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #dcd6c9;
+  line-height: 1.6;
+  padding: 0 1.25rem;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-body.open {
+  max-height: 500px; /* adjust as needed */
+  padding: 0 1.25rem 1rem 1.25rem;
+}
+
 
 
 
