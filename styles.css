@@ -249,8 +249,8 @@ button[type="submit"]:hover {
 }
 
 .accordion-body.active {
-  padding: 15px 15px 22px 15px;
-  max-height: 500px; /* Adjust depending on answer length */
+  max-height: 500px; /* or use a large enough value */
+  padding-top: 10px;
 }
 
 
@@ -444,5 +444,6 @@ footer {
     gap: 10px;
   }
 }
+
 
 
