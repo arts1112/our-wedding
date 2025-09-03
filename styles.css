@@ -528,6 +528,23 @@ header.hero {
   background-color: #f6c93f;
 }
 
+.tab-btn {
+  background-color: #fdf2d3;
+  border: 2px solid #e58e4d;
+  color: #e58e4d;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background-color: #e58e4d;
+  color: white;
+}
+
 
 
 
