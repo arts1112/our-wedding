@@ -28,10 +28,16 @@
   
 <body>
 
-  <!-- Navigation Bar -->
+ <!-- Responsive Navigation Bar -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">A & R</div>
+
+    <!-- Hamburger Icon -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#countdown">Countdown</a></li>
@@ -379,8 +385,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      // Toggle icon (optional)
+      navToggle.innerHTML = navLinks.classList.contains("open")
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
