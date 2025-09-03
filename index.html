@@ -118,13 +118,51 @@
   </section>
 
   <!-- Gifts Section -->
-  <section id="gifts">
-      <div class="gifts-content">
-          <h2>Gift Registry</h2>
-          <p>Your presence at our wedding is the best gift we could ask for. However, if you'd like to bless us with a gift, we've created a registry to make it easy!</p>
-          <a href="https://www.thesmstoregiftregistry.com/eventdetail/68b6e7d8d3f4d4b656c7e359?eventCode=8217786" target="_blank" class="cta-button">View Our Registry</a>
+<section id="gifts">
+  <div class="gifts-content">
+    <h2>Monetary Gift</h2>
+    <p>Your presence at our wedding is the greatest gift we could ask for. But should you wish to give nonetheless, A monetary gift is what we suggest— To help us avoid duplicate home appliances and such, here are some simple ways to do so.</p>
+
+    <!-- Toggle Button (Mobile) -->
+    <button id="toggle-qr-btn" style="
+      background-color: #e58e4d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1em;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 20px;
+    ">Show Gift Options</button>
+
+    <!-- Tab Container -->
+    <div id="qr-container" style="display: none; margin-top: 30px;">
+      <!-- Tab Buttons -->
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+        <button class="tab-btn active" onclick="switchTab('gcash')">GCash</button>
+        <button class="tab-btn" onclick="switchTab('psbank')">PSBank</button>
       </div>
-  </section>
+
+      <!-- GCash Tab -->
+      <div class="tab-content" id="gcash-tab">
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+          <!-- Arman's GCash -->
+          <div style="text-align: center;">
+            <h3 style="color: #e58e4d;">Arman's GCash</h3>
+            <img src="1000056567.jpg" alt="Arman's GCash QR" style="max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
+            <p style="color: #888;">0927 251 6245<br>Carl Francis Arman David</p>
+          </div>
+
+      <!-- PSBank Tab -->
+      <div class="tab-content" id="psbank-tab" style="display: none;">
+        <div style="text-align: center;">
+          <h3 style="color: #e58e4d;">Arman's PSBank</h3>
+          <img src="1000056568.jpg" style="max-width: 200px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <section class="social-section">
     <h2>Contact Us</h2>
@@ -203,6 +241,33 @@
       }
     });
   </script>
+
+      <script>
+  // Toggle for showing/hiding gift section
+  const toggleBtn = document.getElementById("toggle-qr-btn");
+  const qrContainer = document.getElementById("qr-container");
+
+  toggleBtn.addEventListener("click", function () {
+    const isVisible = qrContainer.style.display === "block";
+    qrContainer.style.display = isVisible ? "none" : "block";
+    toggleBtn.textContent = isVisible ? "Show Gift Options" : "Hide Gift Options";
+  });
+
+  // Tab switching logic
+  function switchTab(tab) {
+    // Hide all tabs
+    document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+
+    // Remove 'active' class from all buttons
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+
+    // Show selected tab and activate button
+    document.getElementById(`${tab}-tab`).style.display = "block";
+    document.querySelector(`.tab-btn[onclick="switchTab('${tab}')"]`).classList.add("active");
+  }
+</script>
+
 </body>
 </html>
+
 
