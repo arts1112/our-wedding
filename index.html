@@ -336,34 +336,27 @@
 
   <script>
   document.querySelectorAll('.accordion-header').forEach(button => {
-    button.addEventListener('click', () => {
-      const openHeader = document.querySelector('.accordion-header.active');
-      const openBody = document.querySelector('.accordion-body.active');
+  button.addEventListener('click', () => {
+    const activeHeader = document.querySelector('.accordion-header.active');
+    const activeBody = document.querySelector('.accordion-body.active');
 
-      // Close other open item
-      if (openHeader && openHeader !== button) {
-        openHeader.classList.remove('active');
-        openBody.classList.remove('active');
-        openBody.style.maxHeight = null;
-      }
+    if (activeHeader && activeHeader !== button) {
+      activeHeader.classList.remove('active');
+      activeBody.classList.remove('active');
+    }
 
-      // Toggle current item
-      button.classList.toggle('active');
-      const body = button.nextElementSibling;
-      body.classList.toggle('active');
-
-      if (body.classList.contains('active')) {
-        body.style.maxHeight = body.scrollHeight + "px";
-      } else {
-        body.style.maxHeight = null;
-      }
-    });
+    button.classList.toggle('active');
+    const body = button.nextElementSibling;
+    body.classList.toggle('active');
   });
+});
+
 </script>
 
 
 </body>
 </html>
+
 
 
 
