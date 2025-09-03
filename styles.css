@@ -248,6 +248,11 @@ button[type="submit"]:hover {
   line-height: 1.6;
 }
 
+.accordion-body.active {
+  padding: 15px 15px 22px 15px;
+  max-height: 500px; /* Adjust depending on answer length */
+}
+
 
 /* Event Location Section */
 #location {
@@ -439,4 +444,5 @@ footer {
     gap: 10px;
   }
 }
+
 
