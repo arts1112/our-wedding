@@ -13,6 +13,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
 </head>
   
 <body>
@@ -81,17 +84,16 @@
 
   
   <!-- FAQs Section -->
-<section id="faqs" style="background-color: #5c5f55; padding: 60px 20px;">
+<section id="faqs" style="background-color: #fdf1d6; padding: 60px 20px; font-family: 'Poppins', sans-serif;">
   <div class="faq-content" style="max-width: 800px; margin: auto;">
-
     <h2 style="
-      font-family: 'Catchy Mager', cursive;
+      font-family: 'Alex Brush', cursive;
       font-size: 40px;
-      color: white;
+      color: #e58e4d;
       text-align: center;
       margin-bottom: 40px;
     ">
-      Frequently Asked Questions
+      FAQs
     </h2>
 
     <div class="accordion">
@@ -122,21 +124,21 @@
       <div class="accordion-item">
         <button class="accordion-header">What time should I arrive?</button>
         <div class="accordion-body">
-          Please arrive at least 30 minutes before the ceremony begins to allow ample time for seating, a quick restroom break, and greeting fellow guests.
+          The ceremony will start at 3:00 PM, but feel free to arrive a little earlier.
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">Is there parking available?</button>
         <div class="accordion-body">
-          A parking attendant will be available to assist you upon arrival at the parking area.
+          Yes, there is plenty of parking available at the venue.
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header">What happens after the ceremony?</button>
         <div class="accordion-body">
-          A grazing table will be available for light snacks while the couple is having their photoshoot, retouch, and preparing for the reception.
+          A grazing table will be available for light snacks while the couple is having their photoshoot and preparing for the reception.
         </div>
       </div>
 
@@ -151,9 +153,9 @@
       <div class="accordion-item">
         <button class="accordion-header">Snap & Share</button>
         <div class="accordion-body">
-          Help us document our special day by sharing our captured moments using our official hashtag: <br>
-          <strong>#_______________________________</strong><br><br>
-          Please feel free to upload any photos you captured to our shared drive — we’d love to see the day through your lens.
+          Help us document our special day by sharing moments using our hashtag: <br>
+          <strong>#__________________________</strong><br><br>
+          You can also upload any photos to our shared drive. We'd love to see the day through your eyes.
         </div>
       </div>
 
@@ -191,12 +193,15 @@
   </section>
 
   <!-- Gifts Section -->
-<section id="gifts">
-  <div class="gifts-content">
-    <h2>Monetary Gift</h2>
-    <p>Your presence at our wedding is the greatest gift we could ask for. But should you wish to give nonetheless, a monetary gift is what we suggest—To help us avoid duplicate home appliances and such, here are some simple ways to do so.</p>
+<section id="gifts" style="background-color: #fdf1d6; padding: 60px 20px; text-align: center; font-family: 'Poppins', sans-serif;">
+  <div class="gifts-content" style="max-width: 800px; margin: auto;">
+    <h2 style="font-family: 'Alex Brush', cursive; color: #e58e4d; font-size: 36px;">
+      Monetary Gift
+    </h2>
+    <p style="color: #444; font-size: 1.1em;">
+      Your presence at our wedding is the greatest gift we could ask for. But should you wish to give nonetheless, a monetary gift is what we suggest—To help us avoid duplicate home appliances and such, here are some simple ways to do so.
+    </p>
 
-    <!-- Toggle Button (Mobile) -->
     <button id="toggle-qr-btn" style="
       background-color: #e58e4d;
       color: white;
@@ -208,24 +213,20 @@
       margin-top: 20px;
     ">Show Gift Options</button>
 
-    <!-- Tab Container -->
+    <!-- Gift Options -->
     <div id="qr-container" style="display: none; margin-top: 30px;">
-      <!-- Tab Buttons -->
       <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
-        <button class="tab-btn active" onclick="switchTab('gcash')">GCash</button>
-        <button class="tab-btn" onclick="switchTab('psbank')">PSBank</button>
+        <button class="tab-btn active" onclick="switchTab('gcash')" style="background-color: #e58e4d; color: white; padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer;">GCash</button>
+        <button class="tab-btn" onclick="switchTab('psbank')" style="background-color: #e58e4d; color: white; padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer;">PSBank</button>
       </div>
 
       <!-- GCash Tab -->
       <div class="tab-content" id="gcash-tab">
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-          <!-- Arman's GCash -->
-          <div style="text-align: center;">
-            <h3 style="color: #e58e4d;">Arman's GCash</h3>
-            <img src="1000056567.jpg" alt="Arman's GCash QR" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
-          </div>
-        </div> <!-- <-- closing GCash content wrapper -->
-      </div> <!-- <-- closing GCash tab -->
+        <div style="text-align: center;">
+          <h3 style="color: #e58e4d;">Arman's GCash</h3>
+          <img src="1000056567.jpg" alt="Arman's GCash QR" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
+        </div>
+      </div>
 
       <!-- PSBank Tab -->
       <div class="tab-content" id="psbank-tab" style="display: none;">
@@ -234,7 +235,7 @@
           <img src="1000056568.jpg" alt="Arman's PSBank QR" style="max-width: 300px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 10px;" />
         </div>
       </div>
-    </div> <!-- <-- closing qr-container -->
+    </div>
   </div>
 </section>
 
@@ -364,6 +365,7 @@
 
 </body>
 </html>
+
 
 
 
