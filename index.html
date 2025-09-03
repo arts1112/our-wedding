@@ -13,6 +13,17 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preconnect and preload for better font performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Catchy+Mager&family=Poppins:wght@300;400;500&display=swap">
+
+<!-- Optional: Preload critical font file directly if needed -->
+<!--
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/alexbrush/..." crossorigin>
+-->
+
 </head>
   
 <body>
@@ -94,6 +105,19 @@
     </h2>
 
     <!-- FAQ Item -->
+
+    <section id="faqs">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="accordion-item">
+    <h3><button class="accordion-header" aria-expanded="false" aria-controls="faq1">What is the dress code?</button></h3>
+    <div id="faq1" class="accordion-body" aria-hidden="true">
+      <p>Guests: Semi-formal attire, ladies in garden-inspired dresses, gentlemen avoid denim—black or khaki preferred.</p>
+    </div>
+  </div>
+  <!-- Repeat for other items... -->
+</section>
+
     <div class="faq-item" style="margin-bottom: 40px;">
       <h3 style="color: #e58e4d; font-family: 'Alex Brush', cursive; font-size: 24px; margin-bottom: 10px;">
         What is the dress code?
@@ -358,8 +382,31 @@
   }
 </script>
 
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', String(!expanded));
+
+      const body = document.getElementById(header.getAttribute('aria-controls'));
+      body.setAttribute('aria-hidden', String(expanded));
+      body.classList.toggle('open');
+    });
+
+    // keyboard accessibility (Enter or Space)
+    header.addEventListener('keypress', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        header.click();
+      }
+    });
+  });
+});
+</script>
+
 </body>
 </html>
+
 
 
 
