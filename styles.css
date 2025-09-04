@@ -751,7 +751,6 @@ header.hero {
 /* NAVIGATION BAR STYLES */
 .navbar {
   background-color: #fdf2d3; /* soft pastel yellow matching your theme */
-  border-bottom: 2px solid #e58e4d;
   position: sticky;
   top: 0;
   width: 100%;
@@ -936,6 +935,7 @@ header.hero {
   border: none;
   box-shadow: none;
 }
+
 
 
 
