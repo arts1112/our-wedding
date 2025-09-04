@@ -750,21 +750,27 @@ header.hero {
 
 /* NAVIGATION BAR STYLES */
 .navbar {
-  background-color: #fdf2d3; /* soft pastel yellow matching your theme */
+  background-color: #fdf2d3;
+  border-bottom: 4px solid #e58e4d;
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 999;
+  height: 100px; /* Increase height */
+  display: flex;
+  align-items: center;
 }
 
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 20px 20px; /* Adjust padding for vertical spacing */
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  align-items: center;
+  height: 100%;
 }
+
 
 .nav-logo {
   font-family: 'Alex Brush', cursive;
@@ -1026,6 +1032,7 @@ header.hero {
   font-size: 16px;
   font-weight: 500;
 }
+
 
 
 
