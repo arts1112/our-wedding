@@ -925,6 +925,18 @@ header.hero {
   z-index: 10000;
 }
 
+#our-story {
+  scroll-margin-top: 0; /* removes space caused by header scroll offset */
+  padding-top: 60px;   /* adjust if you need spacing below navbar */
+}
+
+/* Remove default border/line some templates add */
+#our-story img,
+#our-story h2 {
+  border: none;
+  box-shadow: none;
+}
+
 
 
 
