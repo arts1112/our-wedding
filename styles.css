@@ -936,6 +936,97 @@ header.hero {
   box-shadow: none;
 }
 
+/* Scrapbook Section Styling */
+.scrapbook-section {
+  background: url('parchment-bg.jpg') repeat;
+  padding: 80px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #5a3e36;
+}
+
+/* Heading */
+.scrapbook-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: 56px;
+  color: #e58e4d;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Container for timeline items */
+.timeline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Individual item */
+.timeline-item {
+  width: 220px;
+  text-align: center;
+  background: #fffefc;
+  padding: 20px 15px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  position: relative;
+  transform: rotate(-1deg);
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* Polaroid-style image frame */
+.photo-frame {
+  background: #ffffff;
+  border: 10px solid #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.photo-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Decorative tape corners */
+.tape {
+  width: 40px;
+  height: 20px;
+  background: url('tape-texture.png') no-repeat center/cover;
+  position: absolute;
+  opacity: 0.6;
+}
+
+.tape.top-left {
+  top: -10px;
+  left: -10px;
+  transform: rotate(-15deg);
+}
+
+.tape.top-right {
+  top: -10px;
+  right: -10px;
+  transform: rotate(15deg);
+}
+
+/* Date & Caption */
+.date {
+  font-size: 14px;
+  color: #a6764b;
+  margin: 8px 0;
+}
+
+.caption {
+  font-size: 16px;
+  font-weight: 500;
+}
+
 
 
 
