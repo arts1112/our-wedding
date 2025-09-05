@@ -673,9 +673,51 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 </div>
 
+      <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".ladies-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+      centeredSlides: true,
+      grabCursor: true,
+      loop: true,
+      breakpoints: {
+        480: { slidesPerView: 2 },
+        640: { slidesPerView: 3 }
+      }
+    });
+
+    new Swiper(".gentlemen-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+      centeredSlides: true,
+      grabCursor: true,
+      loop: true,
+      breakpoints: {
+        480: { slidesPerView: 2 },
+        640: { slidesPerView: 3 }
+      }
+    });
+
+    new Swiper(".kids-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+      centeredSlides: true,
+      grabCursor: true,
+      loop: true,
+      breakpoints: {
+        480: { slidesPerView: 2 },
+        640: { slidesPerView: 4 }
+      }
+    });
+  });
+</script>
+
+
 
 </body>
 </html>
+
 
 
 
