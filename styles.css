@@ -1062,9 +1062,9 @@ header.hero {
 }
 .party-img {
   width: 100%;
-  aspect-ratio: 3/4;
+  aspect-ratio: 1 / 1; /* Square aspect ratio for perfect circle */
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 50%; /* Make the container a circle */
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1078,6 +1078,7 @@ header.hero {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%; /* Make the image itself circular too */
 }
 .party-name {
   margin-top: 10px;
@@ -1098,6 +1099,7 @@ header.hero {
   }
 }
 </style>
+
 
 
 
