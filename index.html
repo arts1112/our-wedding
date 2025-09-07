@@ -214,8 +214,6 @@
   </div>
 </section>
 
-
-  
   <!-- FAQs Section -->
 <section id="faqs">
   <h2>Frequently Asked Questions</h2>
@@ -624,10 +622,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 </script>
 
+<!-- Your gallery HTML above -->
 
+<script>
+  window.onload = () => {
+    const gallery = document.querySelector('.gallery');
+    const rowHeight = parseInt(window.getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
+    const rowGap = parseInt(window.getComputedStyle(gallery).getPropertyValue('gap'));
 
+    gallery.querySelectorAll('img').forEach(img => {
+      img.style.gridRowEnd = `span ${Math.ceil((img.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap))}`;
+    });
+  };
+</script>
 </body>
 </html>
+
 
 
 
