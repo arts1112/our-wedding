@@ -625,18 +625,25 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Your gallery HTML above -->
 
 <script>
-  window.onload = () => {
-    const gallery = document.querySelector('.gallery');
-    const rowHeight = parseInt(window.getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
-    const rowGap = parseInt(window.getComputedStyle(gallery).getPropertyValue('gap'));
+  const gallery = document.querySelector('.gallery');
+  const rowHeight = parseInt(getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
+  const rowGap = parseInt(getComputedStyle(gallery).getPropertyValue('gap'));
 
-    gallery.querySelectorAll('img').forEach(img => {
-      img.style.gridRowEnd = `span ${Math.ceil((img.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap))}`;
+  function resizeAllGridItems() {
+    const allItems = gallery.querySelectorAll('img');
+    allItems.forEach(item => {
+      const rowSpan = Math.ceil((item.offsetHeight + rowGap) / (rowHeight + rowGap));
+      item.style.setProperty('--span', rowSpan);
     });
-  };
+  }
+
+  window.addEventListener('load', resizeAllGridItems);
+  window.addEventListener('resize', resizeAllGridItems);
 </script>
+
 </body>
 </html>
+
 
 
 
