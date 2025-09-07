@@ -1100,33 +1100,6 @@ header.hero {
 }
 </style>
 
-/* === PHOTO GALLERY STYLING === */
-.photo-gallery {
-  background-color: #404c3f;
-  padding: 50px 20px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 12px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.02);
-}
-
-
-
-
 
 
 
