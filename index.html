@@ -197,40 +197,83 @@
   </div>
 </section>
 
-  <!-- Gallery -->
-  <section id="gallery" style="background-color: #fdf2d3;">
+  <!-- Gallery Section -->
+<section id="gallery" style="background-color: #fdf2d3; padding: 50px 20px;">
+  <h2 style="text-align: center; font-family: 'Brush Script MT', cursive; color: #d87e33; font-size: 36px; margin-bottom: 40px;">
+    Gallery
+  </h2>
+
   <div class="gallery">
-  <h2>Gallery</h2>
-    
-    <img src="adventures 4.JPG" alt="Couple" />
-    <img src="stills.PNG" alt="Park" />
-    <img src="538433461_1159955706154005_4888444705637979730_n.jpg" alt="Friends" />
-    <img src="proposal.jpg" alt="Night Beach" />
-    <img src="chuckie.jpg" alt="Outdoor Seating" />
-    <img src="adventures 1.jpg" alt="Puppy" />
-    <img src="adventures 2.jpg" alt="Puppy" />
-    <img src="adventures 3.jpg" alt="Puppy" />
-    <img src="2017.jpg" alt="Puppy" />
+    <img src="proposal.jpg" alt="Proposal" />
+    <img src="adventures 4.JPG" alt="Couple Eiffel" />
+    <img src="538433461_1159955706154005_4888444705637979730_n.jpg" alt="Studio" />
+    <img src="stills.PNG" alt="Resort" />
+    <img src="chuckie.jpg" alt="Puppy" />
+    <img src="adventures 1.jpg" alt="Outdoor" />
+    <img src="adventures 2.jpg" alt="Mirror Tower" />
+    <img src="adventures 3.jpg" alt="Couple Boracay" />
+    <img src="2017.jpg" alt="White House" />
   </div>
+</section>
 
-  <script>
-    const gallery = document.querySelector('.gallery');
-    const rowHeight = parseInt(getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
-    const rowGap = parseInt(getComputedStyle(gallery).getPropertyValue('gap'));
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 10px;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-    function resizeAllGridItems() {
-      const allItems = gallery.querySelectorAll('img');
-      allItems.forEach(item => {
+  .gallery img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    grid-row-end: span var(--span);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    position: relative;
+  }
+</style>
+
+<script>
+  const gallery = document.querySelector('.gallery');
+  const rowHeight = parseInt(getComputedStyle(gallery).getPropertyValue('grid-auto-rows'));
+  const rowGap = parseInt(getComputedStyle(gallery).getPropertyValue('gap'));
+
+  function resizeAllGridItems() {
+    const allItems = gallery.querySelectorAll('img');
+    allItems.forEach(item => {
+      const rowSpan = Math.ceil((item.offsetHeight + rowGap) / (rowHeight + rowGap));
+      item.style.setProperty('--span', rowSpan);
+    });
+  }
+
+  function resizeOnImageLoad() {
+    const allItems = gallery.querySelectorAll('img');
+    allItems.forEach(item => {
+      item.addEventListener('load', () => {
         const rowSpan = Math.ceil((item.offsetHeight + rowGap) / (rowHeight + rowGap));
         item.style.setProperty('--span', rowSpan);
       });
-    }
+    });
+  }
 
-    window.addEventListener('load', resizeAllGridItems);
-    window.addEventListener('resize', resizeAllGridItems);
-  </script>
+  window.addEventListener('load', () => {
+    resizeAllGridItems();
+    resizeOnImageLoad();
+  });
+  window.addEventListener('resize', resizeAllGridItems);
+</script>
 
-    </section>
 
   <!-- FAQs Section -->
 <section id="faqs">
@@ -640,6 +683,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
