@@ -1103,7 +1103,7 @@ header.hero {
  <style>
     body {
       background-color: #fdf2d3;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Alex Brush', cursive;
       margin: 0;
       padding: 20px;
       color: #6b4c26;
@@ -1144,6 +1144,7 @@ header.hero {
       position: relative;
     }
   </style>
+
 
 
 
