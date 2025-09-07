@@ -1106,30 +1106,10 @@ header.hero {
   padding: 50px 20px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 10px;
+  grid-auto-rows: 10px; /* base row height */
   gap: 10px;
   padding: 10px;
   background-color: #fdf2d3; /* matches your background */
@@ -1138,12 +1118,19 @@ header.hero {
 .gallery img {
   width: 100%;
   display: block;
-  border-radius: 4px;
+  border-radius: 8px;
   object-fit: cover;
-  grid-row-end: span var(--span);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  grid-row-end: span var(--span); /* masonry span */
 }
 
-/* To make the masonry effect with grid, calculate row spans */
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
 
 
 
