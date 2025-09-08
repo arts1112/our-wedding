@@ -261,14 +261,14 @@ button[type="submit"]:hover {
 }
 
 #location h2 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 36px;
-  color: #f7944d;
+  font-family: 'Alex Brush', cursive;
+  font-size: 3em;
+  color: #fdf2d3;
   margin-bottom: 20px;
 }
 
 #location p {
-  font-size: 16px;
+  font-size: 1.2em;
   margin-bottom: 10px;
   color: white;
 }
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
