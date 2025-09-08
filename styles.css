@@ -63,7 +63,6 @@ header.hero {
 .content p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    font-family: 'Alex Brush', cursive;
     color: #FFFAA0;
     line-height: 1.6;
 }
@@ -1105,5 +1104,6 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
