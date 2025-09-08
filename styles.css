@@ -64,7 +64,7 @@ header.hero {
   font-size: 2em;
   color: #fdf2d3; /* thyme */
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Alex Brush';
 }
 
 .event-place a:hover {
@@ -1120,6 +1120,7 @@ header.hero {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
