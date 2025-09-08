@@ -305,8 +305,8 @@ button[type="submit"]:hover {
 }
 
 #gifts h2 {
-    font-size: 2.5em;
-    color: #e58e4d; /* Gray orange */
+    font-size: 3em;
+    color: #b8c3a6; /* Gray orange */
     margin-bottom: 20px;
 }
 
@@ -400,9 +400,9 @@ footer {
 }
 
 .social-section h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    color: #f78c3d;
+    font-family: 'Alex Brush', cursive;
+    font-size: 3em;
+    color: #fdf2d3;
     margin-bottom: 10px;
 }
 
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
