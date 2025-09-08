@@ -61,6 +61,7 @@ header.hero {
 }
 
 .event-place a {
+  font-size: 2em;
   color: #fdf2d3; /* thyme */
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
@@ -1119,6 +1120,7 @@ header.hero {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
