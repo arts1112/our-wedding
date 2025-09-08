@@ -490,33 +490,33 @@
   </script>
 
   <!-- Music toggle script -->
-  <script>
-    const button = document.getElementById("music-toggle");
-    const player = document.getElementById("youtube-player");
+<script>
+  const button = document.getElementById("music-toggle");
+  const player = document.getElementById("youtube-player");
 
-    let isPlaying = false;
-    const videoId = "yKNxeF4KMsY"; // Coldplay - Yellow
+  let isPlaying = false;
+  const videoId = "Ptk_1Dc2iPY"; // Your chosen YouTube video
 
-    function playMusic() {
-      player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&playlist=${videoId}`;
-      isPlaying = true;
-      button.innerHTML = `<i class="fas fa-pause"></i>`;
+  function playMusic() {
+    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&playlist=${videoId}`;
+    isPlaying = true;
+    button.innerHTML = `<i class="fas fa-pause"></i>`;
+  }
+
+  function stopMusic() {
+    player.src = "";
+    isPlaying = false;
+    button.innerHTML = `<i class="fas fa-music"></i>`;
+  }
+
+  button.addEventListener("click", () => {
+    if (!isPlaying) {
+      playMusic();
+    } else {
+      stopMusic();
     }
-
-    function stopMusic() {
-      player.src = "";
-      isPlaying = false;
-      button.innerHTML = `<i class="fas fa-music"></i>`;
-    }
-
-    button.addEventListener("click", () => {
-      if (!isPlaying) {
-        playMusic();
-      } else {
-        stopMusic();
-      }
-    });
-  </script>
+  });
+</script>
 
       <script>
   // Toggle for showing/hiding gift section
@@ -693,6 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
