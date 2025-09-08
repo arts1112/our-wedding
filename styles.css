@@ -43,29 +43,29 @@ header.hero {
     max-width: 700px; /* Limit width */
     margin: 0 auto;
     padding: 40px 20px;
-    color: #e58e4d;
+    color: #FFFAA0;
 }
 
 .content h1 {
     font-size: 3em;
     margin-bottom: 20px;
     font-family: 'Alex Brush', cursive;
-    color: #e58e4d;
+    color: #FFFAA0;
 }
 
 .content p {
     font-size: 1.2em;
     margin-bottom: 30px;
-    color: #e58e4d;
+    color: #FFFAA0;
     line-height: 1.6;
 }
 
 .cta-button {
     text-decoration: none;
-    background-color: #e58e4d;
+    background-color: #FFFAA0;
     padding: 12px 25px;
     font-size: 1.2em;
-    color: #fff;
+    color: #b8c3a6;
     border-radius: 25px;
     transition: background-color 0.3s ease;
     display: inline-block;
@@ -1099,6 +1099,7 @@ header.hero {
   }
 }
 </style>
+
 
 
 
