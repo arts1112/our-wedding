@@ -60,11 +60,15 @@ header.hero {
     color: #fdf2d3;
 }
 
-.content .event-place {
-  font-size: 2em;
+.event-place a {
+  color: #fdf2d3; /* thyme */
+  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  color: #fdf2d3;
-  margin-top: 0;
+}
+
+.event-place a:hover {
+  text-decoration: underline;
+  color: #556B2F; /* darker thyme on hover */
 }
 
 .content h3 {
@@ -1110,6 +1114,10 @@ header.hero {
   .swiper {
     display: none; /* Hide swiper on desktop */
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 
