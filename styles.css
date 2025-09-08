@@ -60,7 +60,7 @@ header.hero {
     color: #FFFAA0;
 }
 
-.content p {
+.content h3 {
     font-size: 1.2em;
     margin-bottom: 30px;
     color: #FFFAA0;
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
