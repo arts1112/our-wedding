@@ -90,7 +90,7 @@ header.hero {
 }
 
 .countdown-content h2 {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #e58e4d; /* Gray orange color */
     margin-bottom: 20px;
 }
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
