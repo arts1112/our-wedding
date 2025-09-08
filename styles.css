@@ -50,20 +50,20 @@ header.hero {
     font-size: 3em;
     margin-bottom: 20px;
     font-family: 'Alex Brush', cursive;
-    color: #FFFAA0;
+    color: #fdf2d3;
 }
 
 .content h2 {
     font-size: 3em;
     margin-bottom: 20px;
     font-family: 'Alex Brush', cursive;
-    color: #FFFAA0;
+    color: #fdf2d3;
 }
 
 .content h3 {
     font-size: 1.2em;
     margin-bottom: 30px;
-    color: #FFFAA0;
+    color: #fdf2d3;
     line-height: 1.6;
 }
 
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
