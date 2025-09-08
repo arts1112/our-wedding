@@ -60,6 +60,13 @@ header.hero {
     color: #fdf2d3;
 }
 
+.content .event-place {
+  font-size: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  color: #6B8E23; /* thyme */
+  margin-top: 0;
+}
+
 .content h3 {
     font-size: 1.2em;
     margin-bottom: 30px;
@@ -1104,6 +1111,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
