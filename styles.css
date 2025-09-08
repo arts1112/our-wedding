@@ -72,14 +72,14 @@ header.hero {
     background-color: #FFFAA0;
     padding: 12px 25px;
     font-size: 1.2em;
-    color: #b8c3a6;
+    color: #fdf2d3;
     border-radius: 25px;
     transition: background-color 0.3s ease;
     display: inline-block;
 }
 
 .cta-button:hover {
-    background-color: #f6c93f;
+    background-color: #b8c3a6;
 }
 
 /* Countdown Timer Section */
@@ -1104,6 +1104,7 @@ header.hero {
     display: none; /* Hide swiper on desktop */
   }
 }
+
 
 
 
