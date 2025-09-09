@@ -960,7 +960,7 @@ header.hero {
 .scrapbook-section {
   background: url('parchment-bg.jpg') repeat;
   padding: 80px 20px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   color: #5a3e36;
 }
 
@@ -1120,6 +1120,7 @@ header.hero {
 html {
   scroll-behavior: smooth;
 }
+
 
 
 
