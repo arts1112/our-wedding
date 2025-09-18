@@ -213,47 +213,60 @@
     Gallery
   </h2>
 
-  <div class="gallery">
-    <img src="images/2.JPG" alt="image1" />
-    <img src="images/3.JPG" alt="image2" />
-    <img src="images/4.JPG" alt="image3" />
-    <img src="images/5.JPG" alt="image4" />
-    <img src="images/6.JPG" alt="image5" />
-    <img src="images/7.JPG" alt="image6" />
-    <img src="images/8.JPG" alt="image7" />
-    <img src="images/9.JPG" alt="image8" />
-    <img src="images/11.JPG" alt="image9" />
-    <img src="images/12.JPG" alt="image10" />
-    <img src="images/13.JPG" alt="image11" />
-    <img src="images/14.JPG" alt="image12" />
-    <img src="images/15.JPG" alt="image13" />
-    <img src="images/16.JPG" alt="image14" />
-    <img src="images/18.JPG" alt="image15" />
-    <img src="images/19.JPG" alt="image16" />
-    <img src="images/20.JPG" alt="image17" />
-    <img src="images/21.JPG" alt="image18" />
-    <img src="images/23.JPG" alt="image19" />
-    <img src="images/24.JPG" alt="image20" />
+  <div class="gallery-wrapper">
+    <button class="scroll-btn scroll-left">&#10094;</button>
+    <div class="gallery">
+      <img src="images/2.JPG" alt="image1" />
+      <img src="images/3.JPG" alt="image2" />
+      <img src="images/4.JPG" alt="image3" />
+      <img src="images/5.JPG" alt="image4" />
+      <img src="images/6.JPG" alt="image5" />
+      <img src="images/7.JPG" alt="image6" />
+      <img src="images/8.JPG" alt="image7" />
+      <img src="images/9.JPG" alt="image8" />
+      <img src="images/11.JPG" alt="image9" />
+      <img src="images/12.JPG" alt="image10" />
+      <img src="images/13.JPG" alt="image11" />
+      <img src="images/14.JPG" alt="image12" />
+      <img src="images/15.JPG" alt="image13" />
+      <img src="images/16.JPG" alt="image14" />
+      <img src="images/18.JPG" alt="image15" />
+      <img src="images/19.JPG" alt="image16" />
+      <img src="images/20.JPG" alt="image17" />
+      <img src="images/21.JPG" alt="image18" />
+      <img src="images/23.JPG" alt="image19" />
+      <img src="images/24.JPG" alt="image20" />
+    </div>
+    <button class="scroll-btn scroll-right">&#10095;</button>
   </div>
 </section>
 
 <style>
-  .gallery {
-    column-count: 3;
-    column-gap: 15px;
-    max-width: 1200px;
+  .gallery-wrapper {
+    position: relative;
+    max-width: 1100px;
     margin: 0 auto;
+    overflow: hidden;
   }
 
+  .gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    padding: 10px;
+  }
+  .gallery::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
   .gallery img {
-    width: 100%;
-    margin-bottom: 15px;
-    display: block;
+    flex-shrink: 0;
+    height: 280px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    break-inside: avoid;
+    object-fit: cover;
   }
 
   .gallery img:hover {
@@ -261,129 +274,47 @@
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
   }
 
-  @media (max-width: 900px) {
-    .gallery { column-count: 2; }
-  }
-
-  @media (max-width: 600px) {
-    .gallery { column-count: 1; }
-  }
-
-  /* Modal (Lightbox) */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .modal.show { display: flex; }
-
-  .modal img {
-    max-width: 70%;
-    max-height: 70%;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.3s ease-in-out;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  /* Arrows */
-  .arrow {
+  .scroll-btn {
     position: absolute;
     top: 50%;
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    user-select: none;
     transform: translateY(-50%);
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 50%;
-    transition: background 0.2s;
-  }
-  .arrow:hover { background: rgba(0, 0, 0, 0.6); }
-
-  .arrow-left { left: 30px; }
-  .arrow-right { right: 30px; }
-
-  /* Close Button */
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
+    background: rgba(0,0,0,0.4);
     color: white;
+    border: none;
+    font-size: 2rem;
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    transition: background 0.2s ease;
+  }
+  .scroll-btn:hover { background: rgba(0,0,0,0.7); }
+
+  .scroll-left { left: 10px; }
+  .scroll-right { right: 10px; }
+
+  @media (max-width: 768px) {
+    .gallery img { height: 200px; }
   }
 </style>
 
-<!-- Modal for zoom -->
-<div class="modal" id="modal">
-  <span class="close-btn">&times;</span>
-  <span class="arrow arrow-left">&#10094;</span>
-  <img id="modal-img" src="" alt="Zoomed Image">
-  <span class="arrow arrow-right">&#10095;</span>
-</div>
-
 <script>
-  const galleryImages = document.querySelectorAll(".gallery img");
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modal-img");
-  const closeBtn = modal.querySelector(".close-btn");
-  const prevBtn = modal.querySelector(".arrow-left");
-  const nextBtn = modal.querySelector(".arrow-right");
+  const scrollContainer = document.querySelector(".gallery");
+  const leftBtn = document.querySelector(".scroll-left");
+  const rightBtn = document.querySelector(".scroll-right");
 
-  let currentIndex = 0;
-
-  function openModal(index) {
-    currentIndex = index;
-    modalImg.src = galleryImages[currentIndex].src;
-    modal.classList.add("show");
-  }
-
-  function closeModal() {
-    modal.classList.remove("show");
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    modalImg.src = galleryImages[currentIndex].src;
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    modalImg.src = galleryImages[currentIndex].src;
-  }
-
-  galleryImages.forEach((img, index) => {
-    img.addEventListener("click", () => openModal(index));
+  rightBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
   });
 
-  closeBtn.addEventListener("click", closeModal);
-  prevBtn.addEventListener("click", showPrev);
-  nextBtn.addEventListener("click", showNext);
-
-  // Close on outside click
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+  leftBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
   });
 
-  // Keyboard navigation
+  // Optional: enable keyboard navigation
   document.addEventListener("keydown", (e) => {
-    if (!modal.classList.contains("show")) return;
-    if (e.key === "ArrowLeft") showPrev();
-    if (e.key === "ArrowRight") showNext();
-    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowRight") scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+    if (e.key === "ArrowLeft") scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
   });
 </script>
 
@@ -795,6 +726,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
