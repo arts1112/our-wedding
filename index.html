@@ -214,7 +214,7 @@
   </h2>
 
   <div class="gallery-wrapper">
-    <button class="scroll-btn scroll-left">&#10094;</button>
+    <button class="gallery-btn btn-left">&#10094;</button>
     <div class="gallery">
       <img src="images/2.JPG" alt="image1" />
       <img src="images/3.JPG" alt="image2" />
@@ -237,11 +237,20 @@
       <img src="images/23.JPG" alt="image19" />
       <img src="images/24.JPG" alt="image20" />
     </div>
-    <button class="scroll-btn scroll-right">&#10095;</button>
+    <button class="gallery-btn btn-right">&#10095;</button>
   </div>
 </section>
 
+<!-- Modal (Lightbox) -->
+<div class="modal" id="modal">
+  <span class="close-btn">&times;</span>
+  <button class="gallery-btn modal-left">&#10094;</button>
+  <img id="modal-img" src="" alt="Zoomed Image">
+  <button class="gallery-btn modal-right">&#10095;</button>
+</div>
+
 <style>
+  /* Gallery Layout */
   .gallery-wrapper {
     position: relative;
     max-width: 1100px;
@@ -254,10 +263,10 @@
     gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
     padding: 10px;
   }
-  .gallery::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+  .gallery::-webkit-scrollbar { display: none; }
 
   .gallery img {
     flex-shrink: 0;
@@ -274,47 +283,193 @@
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
   }
 
-  .scroll-btn {
+  /* Unified Buttons */
+  .gallery-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.45);
     color: white;
     border: none;
     font-size: 2rem;
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
-    padding: 10px;
-    transition: background 0.2s ease;
+    padding: 12px 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, transform 0.2s ease;
   }
-  .scroll-btn:hover { background: rgba(0,0,0,0.7); }
+  .gallery-btn:hover {
+    background: rgba(0,0,0,0.7);
+    transform: scale(1.1);
+  }
 
-  .scroll-left { left: 10px; }
-  .scroll-right { right: 10px; }
+  .btn-left { left: 10px; }
+  .btn-right { right: 10px; }
+
+  /* Modal Lightbox */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .modal.show { display: flex; }
+
+  .modal img {
+    max-width: 85%;
+    max-height: 85%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+  }
+
+  /* Zoom mode */
+  .modal.zoomed img {
+    transform: scale(1.5);
+    cursor: grab;
+  }
+
+  .modal-left { left: 30px; }
+  .modal-right { right: 30px; }
+
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
 
   @media (max-width: 768px) {
     .gallery img { height: 200px; }
+    .gallery-btn { font-size: 1.5rem; }
   }
 </style>
 
 <script>
   const scrollContainer = document.querySelector(".gallery");
-  const leftBtn = document.querySelector(".scroll-left");
-  const rightBtn = document.querySelector(".scroll-right");
+  const leftBtn = document.querySelector(".btn-left");
+  const rightBtn = document.querySelector(".btn-right");
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = modal.querySelector(".close-btn");
+  const prevBtn = modal.querySelector(".modal-left");
+  const nextBtn = modal.querySelector(".modal-right");
 
-  rightBtn.addEventListener("click", () => {
-    scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
+  let currentIndex = 0;
+  let isDragging = false;
+  let startX, startY, currentTranslateX = 0, currentTranslateY = 0;
+
+  // Horizontal scrolling
+  rightBtn.addEventListener("click", () => scrollContainer.scrollBy({ left: 300, behavior: "smooth" }));
+  leftBtn.addEventListener("click", () => scrollContainer.scrollBy({ left: -300, behavior: "smooth" }));
+
+  // Open modal
+  function openModal(index) {
+    currentIndex = index;
+    modalImg.src = galleryImages[currentIndex].src;
+    modal.classList.add("show");
+  }
+
+  // Close modal
+  function closeModal() {
+    modal.classList.remove("show", "zoomed");
+    modalImg.style.transform = ""; // reset drag position
+    currentTranslateX = currentTranslateY = 0;
+  }
+
+  // Switch images
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+    resetZoom();
+  }
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    modalImg.src = galleryImages[currentIndex].src;
+    resetZoom();
+  }
+
+  // Zoom toggle
+  modalImg.addEventListener("click", () => {
+    if (!modal.classList.contains("zoomed")) {
+      modal.classList.add("zoomed");
+    } else {
+      modal.classList.remove("zoomed");
+      resetDrag();
+    }
   });
 
-  leftBtn.addEventListener("click", () => {
-    scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
-  });
+  function resetZoom() {
+    modal.classList.remove("zoomed");
+    resetDrag();
+  }
 
-  // Optional: enable keyboard navigation
+  function resetDrag() {
+    currentTranslateX = currentTranslateY = 0;
+    modalImg.style.transform = "";
+  }
+
+  // Drag-to-pan
+  modalImg.addEventListener("mousedown", startDrag);
+  modalImg.addEventListener("touchstart", startDrag, { passive: false });
+
+  function startDrag(e) {
+    if (!modal.classList.contains("zoomed")) return;
+    isDragging = true;
+    startX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+    startY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+    modalImg.style.cursor = "grabbing";
+    e.preventDefault();
+  }
+
+  window.addEventListener("mousemove", drag);
+  window.addEventListener("touchmove", drag, { passive: false });
+
+  function drag(e) {
+    if (!isDragging) return;
+    const x = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+    const y = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+    const dx = x - startX;
+    const dy = y - startY;
+    modalImg.style.transform = `scale(1.5) translate(${currentTranslateX + dx}px, ${currentTranslateY + dy}px)`;
+  }
+
+  window.addEventListener("mouseup", endDrag);
+  window.addEventListener("touchend", endDrag);
+
+  function endDrag(e) {
+    if (!isDragging) return;
+    const x = e.type.includes("touch") ? (e.changedTouches[0].clientX) : e.clientX;
+    const y = e.type.includes("touch") ? (e.changedTouches[0].clientY) : e.clientY;
+    currentTranslateX += x - startX;
+    currentTranslateY += y - startY;
+    isDragging = false;
+    modalImg.style.cursor = "grab";
+  }
+
+  // Attach events
+  galleryImages.forEach((img, index) => img.addEventListener("click", () => openModal(index)));
+  closeBtn.addEventListener("click", closeModal);
+  prevBtn.addEventListener("click", showPrev);
+  nextBtn.addEventListener("click", showNext);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+  // Keyboard navigation
   document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") scrollContainer.scrollBy({ left: 300, behavior: "smooth" });
-    if (e.key === "ArrowLeft") scrollContainer.scrollBy({ left: -300, behavior: "smooth" });
+    if (!modal.classList.contains("show")) return;
+    if (e.key === "ArrowLeft") showPrev();
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "Escape") closeModal();
   });
 </script>
 
@@ -726,6 +881,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
