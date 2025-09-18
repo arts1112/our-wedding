@@ -237,14 +237,14 @@
   </div>
 </section>
 
-<!-- Modal (Lightbox) -->
+<!-- Modal -->
 <div class="modal" id="modal">
   <span class="close-btn">&times;</span>
   <img id="modal-img" src="" alt="Zoomed Image">
 </div>
 
 <style>
-  /* Grid Layout - 3 columns fixed */
+  /* Fixed 3-column grid with scroll if too tall */
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -268,12 +268,14 @@
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
   }
 
+  /* Force scroll on small screens instead of breaking to fewer columns */
   @media (max-width: 900px) {
-    .gallery { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 600px) {
-    .gallery { grid-template-columns: 1fr; }
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      overflow-y: auto;
+      max-height: 80vh;
+      padding-right: 5px; /* prevent scrollbar overlap */
+    }
   }
 
   /* Modal Lightbox */
@@ -298,7 +300,6 @@
     transition: transform 0.3s ease;
   }
 
-  /* Zoom mode */
   .modal.zoomed img {
     transform: scale(1.5);
     cursor: grab;
@@ -321,30 +322,22 @@
   const modalImg = document.getElementById("modal-img");
   const closeBtn = modal.querySelector(".close-btn");
 
-  let currentIndex = 0;
   let isDragging = false;
   let startX, startY, currentTranslateX = 0, currentTranslateY = 0;
 
   function openModal(index) {
-    currentIndex = index;
-    modalImg.src = galleryImages[currentIndex].src;
+    modalImg.src = galleryImages[index].src;
     modal.classList.add("show");
   }
 
   function closeModal() {
     modal.classList.remove("show", "zoomed");
-    modalImg.style.transform = "";
-    currentTranslateX = currentTranslateY = 0;
+    resetDrag();
   }
 
-  // Zoom toggle
   modalImg.addEventListener("click", () => {
-    if (!modal.classList.contains("zoomed")) {
-      modal.classList.add("zoomed");
-    } else {
-      modal.classList.remove("zoomed");
-      resetDrag();
-    }
+    modal.classList.toggle("zoomed");
+    if (!modal.classList.contains("zoomed")) resetDrag();
   });
 
   function resetDrag() {
@@ -352,7 +345,6 @@
     modalImg.style.transform = "";
   }
 
-  // Drag-to-pan when zoomed
   modalImg.addEventListener("mousedown", startDrag);
   modalImg.addEventListener("touchstart", startDrag, { passive: false });
 
@@ -382,17 +374,19 @@
 
   function endDrag(e) {
     if (!isDragging) return;
-    const x = e.type.includes("touch") ? (e.changedTouches[0].clientX) : e.clientX;
-    const y = e.type.includes("touch") ? (e.changedTouches[0].clientY) : e.clientY;
+    const x = e.type.includes("touch") ? e.changedTouches[0].clientX : e.clientX;
+    const y = e.type.includes("touch") ? e.changedTouches[0].clientY : e.clientY;
     currentTranslateX += x - startX;
     currentTranslateY += y - startY;
     isDragging = false;
     modalImg.style.cursor = "grab";
   }
 
-  galleryImages.forEach((img, index) => img.addEventListener("click", () => openModal(index)));
-  closeBtn.addEventListener("click", closeModal);
+  galleryImages.forEach((img, index) =>
+    img.addEventListener("click", () => openModal(index))
+  );
 
+  closeBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 
   document.addEventListener("keydown", (e) => {
@@ -809,6 +803,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
