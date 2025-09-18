@@ -238,32 +238,118 @@
 </section>
 
 <style>
+  body {
+    background-color: #fff6e1; /* pastel yellow */
+    font-family: "Alex Brush", cursive;
+    margin: 0;
+    padding: 0;
+  }
+
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 40px auto;
+    padding: 0 15px;
   }
 
   .gallery img {
     width: 100%;
-    display: block;
-    border-radius: 8px;
+    height: 100%;
     object-fit: cover;
-    grid-row-end: span var(--span);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
   }
 
   .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-    z-index: 1;
-    position: relative;
+    transform: scale(1.03);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Modal Overlay */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .modal.show {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Close Button */
+  .modal::after {
+    content: "×";
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
   }
 </style>
+
+<div class="gallery">
+  <img src="images/photo1.jpg" alt="Gallery Photo">
+  <img src="images/photo2.jpg" alt="Gallery Photo">
+  <img src="images/photo3.jpg" alt="Gallery Photo">
+  <!-- Add the rest of your images here -->
+</div>
+
+<!-- Modal for zoom -->
+<div class="modal" id="modal">
+  <img id="modal-img" src="" alt="Zoomed Image">
+</div>
+
+<script>
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.classList.add("show");
+      modalImg.src = img.src;
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+  });
+</script>
+
 
 <script>
   const gallery = document.querySelector('.gallery');
@@ -704,6 +790,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
